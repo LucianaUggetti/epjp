@@ -5,10 +5,10 @@ public class Simple {
         String s = new String("hello");
         System.out.println(s);
 
-        String t = "hello";
+        String t = "hello"; //meglio string perchè immutabile
         System.out.println(t);
         
-        StringBuilder sb = new StringBuilder("hello");
-        System.out.println(sb);
+        StringBuilder sb = new StringBuilder("hello"); // è mutabile
+        System.out.println(sb); // abbreviato syso(sb)
     }
 }
