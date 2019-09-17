@@ -22,7 +22,7 @@ public class EserciziMetodo { // voglio da Bob a bob e BOB
 			if (s.charAt(i) >= 90) {
 				int c = s.charAt(i) - 32;
 
-				char d = (char) c;
+				char d = (char) c; // così forzo la trasformazione di un int in d
 				System.out.print(d);
 			} else {
 				System.out.print(s.charAt(i));
