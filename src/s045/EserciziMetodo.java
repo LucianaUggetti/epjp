@@ -4,7 +4,7 @@ public class EserciziMetodo { // voglio da Bob a bob e BOB
 
 	public static String toUpper(String s) {
 		
-		StringBuilder sb = new StringBuilder("BoB");
+		StringBuilder sb = new StringBuilder("BoB"); //se vuoto allora appen lo riempio se pieno lo modifico
 		
 		for (int i = 0; i < s.length(); i++) {
 
