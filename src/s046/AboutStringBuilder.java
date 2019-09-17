@@ -11,6 +11,7 @@ public class AboutStringBuilder {
         System.out.println("capacity 3: " + sb3.capacity());
         
         System.out.println("appending: " + sb3.append(' ').append("world"));
+        System.out.println(sb3);
         
         System.out.println("char at position 1 in sb3 is '" + sb3.charAt(1) + "'");
         

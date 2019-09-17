@@ -1,6 +1,6 @@
 package s047;
 
-public class AboutMath {
+public class AboutMath { // non esiste un oggetto Math, sono metodi statici. usato in matematica
     public static void main(String[] args) {
         System.out.println("E is " + Math.E);
         System.out.println("PI is " + Math.PI);
