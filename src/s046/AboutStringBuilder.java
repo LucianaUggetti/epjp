@@ -23,6 +23,7 @@ public class AboutStringBuilder {
         
         System.out.println("current sb3 length: " + sb3.length());
         
+        System.out.println(sb3);
         System.out.println("replace section 2-7 with \"r r\": " + sb3.replace(2, 7, "r r"));
         
         System.out.println("reversing: " + sb3.reverse());
