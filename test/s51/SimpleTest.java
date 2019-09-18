@@ -11,10 +11,10 @@ import s051.Simple;
 class SimpleTest {
     private Simple simple;
 
-    @BeforeEach
+    @BeforeEach //= fallo ogni volta prima di un test
     public void init() {
         simple = new Simple();
-    }
+    } // il metodo init inizializza un oggetto per farsì che poiposso semplicemente usarlo e non inizializzarlo ad ogni test
 
     @Test
     public void negatePositive() {

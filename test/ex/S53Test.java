@@ -22,7 +22,7 @@ class S53Test {
         assertThat(actual, is(Double.POSITIVE_INFINITY));
     }
 
-    @Test
+   @Test
     void distanceSquareTwo() {
         double actual = S53.distance(1, 10, 2, 9);
 
@@ -36,19 +36,25 @@ class S53Test {
         assertThat(actual, is(0.0));
     }
 
+
     @Test
     void engineCapacityPlain() {
         double actual = S53.engineCapacity(74, 75, 4);
 
         assertEquals(actual, 1290.252, 0.001);
     }
+    
+ 
 
     @Test
     void digitSumPositive() {
         int actual = S53.digitSum(123);
 
         assertThat(actual, is(6));
+   
     }
+    
+    
 
     @Test
     void digitSumZero() {
