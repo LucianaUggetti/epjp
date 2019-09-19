@@ -129,7 +129,7 @@ public class S55 {
 			return 1;
 		}
 		int cur = value * (value - 1);
-		int result = 0;
+		// int result = 0;
 
 		for (i = 2; i < value; i++) {
 

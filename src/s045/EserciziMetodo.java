@@ -4,14 +4,14 @@ public class EserciziMetodo { // voglio da Bob a bob e BOB
 
 	public static void main(String[] args) {
 
-		System.out.println(toUpper("bOB"));
+		System.out.println(toUpper("luciana"));
 		System.out.println("toUpper():" + toUpper2("bOB"));
 
 	}
 
 	public static String toUpper(String s) {
 
-		StringBuilder sb = new StringBuilder("bOB"); // se vuoto allora appen lo riempio se pieno lo modifico
+		StringBuilder sb = new StringBuilder("luciana"); // se vuoto allora appen lo riempio se pieno lo modifico
 
 		for (int i = 0; i < sb.length(); i++) {
 
