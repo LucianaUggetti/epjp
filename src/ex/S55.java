@@ -52,30 +52,67 @@ public class S55 {
 	 */
 
 	public static long evenSum(int first, int last) {
-
-		int cur = first += 1;
-		if (cur % 2 == 0) {
-			
-			
-			long sum = cur;
-			return sum;
-		} else {
+		if (first > last) {
 			return 0;
 		}
+
+		int cur = 0;
+		int sum = 0;
+
+		if (first % 2 != 0) {
+
+			cur = first + 1;
+
+		} else {
+			cur = first;
+		}
+		while (cur < last + 1) {
+
+			sum = sum + cur;
+
+			cur += 2;
+
+		}
+		return sum;
 	}
 
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	public static long evenSum1(int first, int last) {
+		int i = 0;
+		int equalf = first % 2;
+		long sum = 0;
+		int cur = first + i;
+		int equall = last % 2;
+		int thelast = last - 1;
+		if (equalf == 0 && equall == 0) {
+
+			do {
+				cur = first + i;
+				sum = sum + cur;
+				i += 2;
+
+			} while (cur <= last);
+			return sum;
+
+		} else if (equalf == 0 && equall != 0) {
+
+			do {
+				cur = first + i;
+				sum = sum + cur;
+				i += 2;
+
+			} while (cur < last);
+			return sum;
+		} else {
+			int odd = first + 1;
+			do {
+				sum = odd += 2;
+			} while (odd < thelast);
+
+			return odd;
+		}
+
+	}
+
 	/**
 	 * Factorial
 	 * 
@@ -83,8 +120,22 @@ public class S55 {
 	 * @return factorial of input value, or zero
 	 */
 	public static long factorial(int value) {
-		// TODO
-		return 0;
+
+		int i = 0;
+		if (value == 0 || value == 1) {
+			return 1;
+		}
+		int cur = value * (value - 1);
+		int result = 0;
+
+		for (i = 2; i < value; i++) {
+
+			cur = (value - i) * cur; // cur=value*(value-i); così moltiplica value per i vari value-i, invece voglio
+										// moltiplicare il risultato di quello per il successivo valore
+
+		}
+
+		return cur;
 	}
 
 	/**

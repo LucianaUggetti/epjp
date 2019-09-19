@@ -38,9 +38,9 @@ class S55Test {
 
     @Test
     void evenSumPositive() {
-        long actual = S55.evenSum(1, 3);
+        long actual = S55.evenSum(4, 9);
 
-        assertThat(actual, is(2L));
+        assertThat(actual, is(18L));
     }
 
     @Test
