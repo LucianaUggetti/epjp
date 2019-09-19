@@ -120,6 +120,9 @@ public class S55 {
 	 * @return factorial of input value, or zero
 	 */
 	public static long factorial(int value) {
+		if (value < 0) {
+			return 0;
+		}
 
 		int i = 0;
 		if (value == 0 || value == 1) {
@@ -144,9 +147,51 @@ public class S55 {
 	 * @param value
 	 * @return the Fibonacci number of value, or zero
 	 */
+
+	public static long fibonacci1(int value) {
+		int a = 0;
+		if (value == 0) {
+			a = 0;
+			return a;
+
+		}
+
+		int b = 0;
+		if (value == 1) {
+
+			b = 1;
+			return b;
+		}
+
+		int fib = 0;
+
+		for (int i = 1; i < value; i++)
+
+			fib = a + b;
+		a = b;
+		a = fib;
+
+		return fib;
+	}
+
 	public static long fibonacci(int value) {
-		// TODO
-		return 0;
+		if (value == 0) {
+			return 0;
+		}
+		if (value == 1) {
+			return 1;
+		}
+
+		long[] array = new long[value + 1]; // se inizializzo dentro if e poi non entra poi lo perdo
+		array[0] = 0;
+		array[1] = 1;
+
+		for (int i = 2; i <= value; i++) {
+			array[i] = array[i - 2] + array[i - 1];
+
+		}
+
+		return array[value]; // lui sa già che quando i=value esce e stampa quello, non devo inizializzarlo
 	}
 
 	/**
@@ -155,10 +200,20 @@ public class S55 {
 	 * @param value
 	 * @return The multiplication table for value, when possible
 	 */
-	public static int[][] multiplicationTable(int value) {
-		int[][] result = new int[0][0];
 
-		// TODO
+	public static int[][] multiplicationTable(int value) {
+		int[][] result = new int[value][value];
+		int i = 0;
+		int j = 0;
+
+		for (i = 1; i < value; i++) {
+			for (j = 1; j < value; j++) {
+
+				result[i - 1][j - 1] = i * j; // il fatto che io sia partita da 1 non vuol dire che adesso lo spazio 0
+												// lo chiamo 1. mi mette le cose nello spazio 1 e mi da sbagliato
+
+			}
+		}
 
 		return result;
 	}

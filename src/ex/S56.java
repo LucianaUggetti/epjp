@@ -7,11 +7,29 @@ public class S56 {
      * @param s
      * @return the input reversed
      */
-    public static String reverse(String s) {
-        // TODO
+
+
+	public static String reverse(String s) {
+        StringBuilder reverse = new StringBuilder (s);
+        
+    
+    		   
+    		  
+    	
+    	
+    	
+    	
+    	
         return "";
     }
 
+   
+    
+    
+    
+    
+    
+    
     /**
      * Check if the parameter is a palindrome
      * 
