@@ -22,6 +22,7 @@ public class S55 {
 		boolean check = true;
 
 		long sum = first;
+		
 		// int first1 = first; non è più necessario,perchè sommo 1 e continuo a sommare
 		// 1 al prossimo ciclo direttamente su first
 		do {

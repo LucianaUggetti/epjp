@@ -83,7 +83,7 @@ public class S56 {
 	 * @return the largest value
 	 */
 	public static int max(int[] data) {
-		// TODO
+	
 		return 0;
 	}
 }
