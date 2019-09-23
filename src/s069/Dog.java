@@ -1,9 +1,9 @@
 package s069;
 
 public class Dog extends Mammal {
-    private Tail tail;
+    private Tail tail; //gli dico che ha una Coda(classe) chiamata coda.
 
-    public Dog(int gestationDays, int tailLen) {
+    public Dog(int gestationDays, int tailLen) { //lunghezza della coda
         super(gestationDays);
         this.tail = new Tail(tailLen);
     }

@@ -6,7 +6,7 @@ public class Dog implements BarkAndWag {
         return "woof!";
     }
 
-    public String bark(int count) {
+    public String bark(int count) { //overloading. E' lo stesso bark di prima ma prende un intero
         StringBuilder sb = new StringBuilder();
 
         for (int i = 0; i < count; i++) {
