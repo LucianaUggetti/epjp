@@ -17,5 +17,6 @@ public class Adder {
         }
         scanner.close(); // see try-with-resources
         System.out.println("Total is " + result);
+        // è un loop infinito, per chiudere quando sono nella console schiccio ctrl z;
     }
 }

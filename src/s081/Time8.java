@@ -20,5 +20,7 @@ public class Time8 {
 
         LocalDateTime ldt = LocalDateTime.of(date, time);
         System.out.println(ldt);
+        
+        // Duration d = Duration.ofDays(2); es
     }
 }
