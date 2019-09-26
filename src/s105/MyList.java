@@ -2,6 +2,8 @@ package s105;
 
 public class MyList {
 	Node head = null;
+	Node cur;
+	Node next;
 
 	public void add(int value) {
 
@@ -10,6 +12,11 @@ public class MyList {
 		}
 		return;
 
-		
+		while (next != null) {
+
+			cur.getNext();
+			cur = next;
+
+		}
 	}
 }
