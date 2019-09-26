@@ -7,9 +7,10 @@ import java.util.Iterator;
 
 public class AsCollection {
     public static void main(String[] args) {
-        Collection<Integer> coll = emptyCollection();
+        Collection<Integer> coll = emptyCollection(); //l'ho creato io in fondo
+        											//
 
-        coll.addAll(aCollection());
+        coll.addAll(aCollection()); //ho tutti i numeri della collection in coll
         System.out.println(coll);
 
         if (coll.contains(-2233)) {
@@ -46,13 +47,13 @@ public class AsCollection {
         System.out.println("Collection is empty? " + coll.isEmpty());
     }
 
-    private static Collection<Integer> emptyCollection() {
+    private static Collection<Integer> emptyCollection() { //mi crea un array list che me la riporta vuota
         Collection<Integer> result = new ArrayList<Integer>();
 
         return result;
     }
 
-    private static Collection<Integer> aCollection() {
+    private static Collection<Integer> aCollection() { //è una collezione. con un boxing automatico da int a integer
         return Arrays.asList(12, 18, -5, -2233);
     }
 

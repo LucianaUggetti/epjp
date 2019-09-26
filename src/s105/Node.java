@@ -5,10 +5,10 @@ public class Node {
 	private int value;
 	private Node next; // = null;
 
-	Node(int value) { //Node(int value, Node next)
+	 Node(int value) { //Node(int value) {
 
 		this.value = value;
-		//this.next = next;
+		this.next = next;
 	}
 
 	public void setNext(Node next) {

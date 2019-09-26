@@ -14,6 +14,7 @@ public class AsList {
         System.out.println("Index of -997: " + list.indexOf(-997));
 
         list.remove(3);
+        System.out.println(list);
         list.set(3, 42);
         System.out.println(list);
     }
