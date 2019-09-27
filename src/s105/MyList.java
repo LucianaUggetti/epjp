@@ -12,11 +12,12 @@ public class MyList {
 		}
 		return;
 
-		while (next != null) {
-
-			cur.getNext();
-			cur = next;
-
-		}
+		// TODO: thinking on ...
+//		while (next != null) {
+//
+//			cur.getNext();
+//			cur = next;
+//
+//		}
 	}
 }

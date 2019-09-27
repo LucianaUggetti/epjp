@@ -1,7 +1,5 @@
 package ex;
 
-import java.util.Arrays;
-
 public class S54 {
 	/**
 	 * Check if the parameter is positive, negative, or zero
