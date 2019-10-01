@@ -177,8 +177,138 @@ select first_name, last_name, salary, (salary + (salary*8.5/100)) as con_increme
 from employees;U
 
 
-pag 46 es 3
+--pag 46 es 3
 select first_name, last_name, TRUNC((ABS(months_between(hire_date, '30-SET-2019')))) as delta_mesi
 from employees;
 
+--pag46es4
+--prende la stringa di lunghezza (round (salary/1000)) gli sostituisce * 
+--però parte da 1 e il primo devi dirgli tu che deve essere una setellina ù
+--allora al primo spazione mettigli '*'
+select rpad('*',round(salary/1000),'*'), salary
+from employees;
+
+--pag 46 es5
+--casto a carattere e gli dico che lo voglio con 0.99. devo specificare il formato
+select employee_id, nvl(to_char(commission_pct,'0.99'), 'no value')
+from employees;
+
+--where filtro le righe, raggruppo e poi filtro i gruppi
+select manager_id, trunc(avg(salary))
+from employees
+where salary < 8000
+group by manager_id
+having avg(salary) > 6000
+order by 2 desc;
+
+
+--DEVO USARE NOT IN PERCHE' GLI STO DANDO UNA COLLEZIONE E NON UN SOLO VALORE, IN QUEL CASO USAVO !=
+select first_name, last_name
+from employees
+where employee_id not in(select distinct manager_id from employees where manager_id is not null);
+
+
+--pag 53 es1 >,<,sum,media
+select min(salary), max(salary), round(avg(salary), 3), sum(salary)
+from employees;
+
+--pag 53 es 1.1
+select job_id, min(salary), max(salary), round(avg(salary), 3), sum(salary)
+from employees
+group by job_id;
+
+
+--pag 53 es 2
+select job_id, count(employee_id)
+from employees
+group by job_id;
+
+--pag 53 es 2.1
+select job_id, count(employee_id)
+from employees
+group by job_id
+having job_id = 'IT_PROG';
+
+--pag 53 es 3
+select  count(distinct(manager_id))
+from employees;
+
+
+--pag 53 es 4
+select max(salary)-min(salary)
+from employees;
+
+--pag 53 es 4.1
+select  max(salary)-min(salary)
+from employees
+group by job_id
+having max(salary)-min(salary) != 0;
+
+
+--pag 53 es 5
+select min(salary)
+from employees
+group by manager_id
+having min(salary) >=6000 and manager_id is not null;
+
+--pag 54 es 1
+select street_address, postal_code, city
+from locations join countries using (country_id);
+
+--pag 54 es 2.1
+select first_name, last_name, department_name
+from employees join departments using (department_id);
+
+
+--pag 54 es 2.2
+select e.first_name, e.last_name, d.department_name
+from employees e join departments d using (department_id) join locations l using(location_id)
+where l.city='Toronto';
+
+--pag 54 es 2.3
+select first_name, last_name
+from employees
+where hire_date > (select hire_date from employees where first_name = 'David' and last_name='Lee');
+
+select e.employee_id, m.hire_date 
+from employees e join employees m on (e.manager_id = m.employee_id);
+
+
+--pag 54 es 2.4
+--PROVA NON RIUSCITA
+select e.first_name, e.last_name, e.hire_date, m.hire_date
+from employees e join ( select m.hire_date
+from employees e join employees m on (e.manager_id = m.employee_id))
+using(employee_id)
+where e.hire_date < m.hire_date;
+
+select e.first_name, e.last_name
+from employees e join employees m on (e.manager_id=m.employee_id)
+where e.hire_date < m.hire_date;
+
+
+--pag 54 es 2.5
+select first_name, last_name
+from employees
+where manager_id=(select manager_id from employees where first_name='Lisa' and last_name='Ozer');
+
+
+--pag 54 es 2.6
+-- regexp_like SE NON MI INTERESSA QUANTE VOLTE LO RIPETO(dove voglio agire, 'la lettera che voglio','i' 
+--perchè non mi interessa se MAIUS o min)
+select first_name, last_name, department_id
+from employees
+where department_id in (select department_id from employees where regexp_like(last_name,'u', 'i'));
+
+
+--pag 54 es 2.7
+select first_name, last_name
+from employees
+where department_id=(select department_id from departments where department_name='Shipping');
+
+
+--pag 54 es 2.8
+select first_name, last_name
+from employees
+where manager_id=(select employee_id from employees where first_name='Steven' and last_name='King');
 
